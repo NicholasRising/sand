@@ -166,8 +166,8 @@ void close(){
 }
 
 void tick(char grid[WIDTH][HEIGHT]){
-    for(int x=0;x<WIDTH;x++){
-        for(int y=0;y<HEIGHT;y++){
+    for(int y=HEIGHT-1;y>=0;y--){
+        for(int x=cycles%2?0:WIDTH-1;x<WIDTH&&x>=0;x+=cycles%2?1:-1){
             if(grid[x][y]==1){
                 sand(grid,x,y);
             }
